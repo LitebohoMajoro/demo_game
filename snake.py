@@ -29,8 +29,8 @@ font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
 
-def our_snake(snake_block, snake_list):
-    for x in snake_list:
+def our_snake(snake_block, snake_List):
+    for x in snake_List:
         pygame.draw.rect(dis, black, [x[0], x[1], snake_block, snake_block])
 
 
@@ -56,6 +56,7 @@ def gameLoop():
     foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
 
     while not game_over:
+
 
         while game_close == True:
             dis.fill(blue)
@@ -104,7 +105,7 @@ def gameLoop():
             if x == snake_Head:
                 game_close = True
 
-        our_snake(snake_block, snake_list)
+        our_snake(snake_block, snake_List)
 
         pygame.display.update()
 
